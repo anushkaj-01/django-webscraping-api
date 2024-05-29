@@ -15,6 +15,7 @@ This is a web scraping application built using Django and Selenium. It allows us
 1. Clone the repository:
 
     git clone https://github.com/anushkaj-01/django-webscraping-api.git
+    
     cd django-webscraping-api
 
 2. Install Python 3.x: Follow the instructions on the [official Python website](https://www.python.org/) to install Python.
