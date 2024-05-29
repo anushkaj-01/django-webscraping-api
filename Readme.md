@@ -14,8 +14,8 @@ This is a web scraping application built using Django and Selenium. It allows us
 
 1. Clone the repository:
 
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/anushkaj-01/django-webscraping-api.git
+    cd django-webscraping-api
 
 2. Install Python 3.x: Follow the instructions on the [official Python website](https://www.python.org/) to install Python.
 
@@ -32,6 +32,7 @@ This is a web scraping application built using Django and Selenium. It allows us
 6. Run database migrations:
 
     python3 manage.py makemigrations
+
     python3 manage.py migrate
 
 ## Usage
@@ -52,6 +53,6 @@ This is a web scraping application built using Django and Selenium. It allows us
    - Access the Django admin interface at `http://127.0.0.1:8000/admin/`.
    - Log in with the superuser account created during migration to view and manage scraped data.
 
-   If haven't create using:
+4. Create superuser using:
 
     python3 manage.py createsuperuser
