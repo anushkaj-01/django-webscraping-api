@@ -18,7 +18,6 @@ from .models import *
 import logging
 from selenium.common.exceptions import TimeoutException, WebDriverException, NoSuchElementException, StaleElementReferenceException
 
-# Define logger
 logger = logging.getLogger(__name__)
 
 class MoviesView(APIView): 
@@ -33,7 +32,7 @@ class MoviesView(APIView):
             driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             url = "https://www.scrapethissite.com/pages/ajax-javascript/"
             driver.get(url)
-            # driver.implicitly_wait(20)
+            driver.implicitly_wait(20)
             wait = WebDriverWait(driver, 20)
             id = 2010
             while id<2016:
@@ -80,8 +79,6 @@ class HockeyTeamsView(APIView):
         try:
             chrome_options = Options() 
             chrome_options.add_experimental_option("detach", True)
-
-        # driver = webdriver.Chrome(options=chrome_options)
             driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             url = "https://www.scrapethissite.com/pages/forms/"
             driver.get(url)
@@ -109,11 +106,7 @@ class HockeyTeamsView(APIView):
                         data.append((team_name, year, wins, losses, win_percent, goals_for, goals_against, plus_minus))
                         HockeyTeamsData.objects.create(team_name= team_name, year = year, wins = wins, losses = losses, win_percent = win_percent, goals_for = goals_for, goals_against = goals_against, plus_minus = plus_minus)
                 i = i+1
-                # for table_row in data:
-                #     titles = table_row.find_elements(By.CLASS_NAME,"film-title")
-                #     for title in titles:
-                #         print(title.text)
-                    
+                
             print(data)  
         except StaleElementReferenceException as e:
             logger.exception("StaleElementReferenceException occurred during scraping: %s", e)
@@ -127,10 +120,6 @@ class HockeyTeamsView(APIView):
         except Exception as e:
             logger.exception(f"Error during scraping: {e}")
             return Response({'error': 'Scraping failed'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        # for table_row in data:
-        #     titles = table_row.find_elements(By.CLASS_NAME,"film-title")
-        #     for title in titles:
-        #         print(title.text)
         finally:
             if driver:
                 driver.quit() 

@@ -61,3 +61,60 @@ Stacktrace:
 #15 0x5a819b26af14 <unknown>
 #16 0x7df8ff697b5a <unknown>
 
+Debug message: This is a debug log message
+WebDriverException occurred during scraping: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.207)
+Stacktrace:
+#0 0x580a834eddc3 <unknown>
+#1 0x580a831dc4e7 <unknown>
+#2 0x580a831b2b7e <unknown>
+#3 0x580a8325170d <unknown>
+#4 0x580a832675b6 <unknown>
+#5 0x580a832491f3 <unknown>
+#6 0x580a8321a28a <unknown>
+#7 0x580a8321ac5e <unknown>
+#8 0x580a834b20eb <unknown>
+#9 0x580a834b603b <unknown>
+#10 0x580a8349e201 <unknown>
+#11 0x580a834b6ba2 <unknown>
+#12 0x580a834830bf <unknown>
+#13 0x580a834dcf18 <unknown>
+#14 0x580a834dd0f0 <unknown>
+#15 0x580a834ecf14 <unknown>
+#16 0x7bba29097b5a <unknown>
+Traceback (most recent call last):
+  File "/home/anushka/Documents/web_scraping/scrape/views.py", line 39, in get
+    btn_2015 = driver.find_element(By.ID, id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anushka/Documents/web_scraping/scraping/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anushka/Documents/web_scraping/scraping/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/home/anushka/Documents/web_scraping/scraping/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.207)
+Stacktrace:
+#0 0x580a834eddc3 <unknown>
+#1 0x580a831dc4e7 <unknown>
+#2 0x580a831b2b7e <unknown>
+#3 0x580a8325170d <unknown>
+#4 0x580a832675b6 <unknown>
+#5 0x580a832491f3 <unknown>
+#6 0x580a8321a28a <unknown>
+#7 0x580a8321ac5e <unknown>
+#8 0x580a834b20eb <unknown>
+#9 0x580a834b603b <unknown>
+#10 0x580a8349e201 <unknown>
+#11 0x580a834b6ba2 <unknown>
+#12 0x580a834830bf <unknown>
+#13 0x580a834dcf18 <unknown>
+#14 0x580a834dd0f0 <unknown>
+#15 0x580a834ecf14 <unknown>
+#16 0x7bba29097b5a <unknown>
+
+Debug message: This is a debug log message
+Debug message: This is a debug log message
